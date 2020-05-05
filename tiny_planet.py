@@ -28,18 +28,18 @@ def tree(l):
 dist = random.uniform(50, 150)
 
 t.penup()
-t.rt(90)
-t.fd(dist)
-t.lt(90)
+t.right(90)
+t.forward(dist)
+t.left(90)
 t.pendown()
 for i in range(random.randint(30, 70)):
     t.penup()
     t.circle(dist, random.uniform(0, 360))
-    t.rt(90)
+    t.right(90)
     t.pendown()
     t.pencolor(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
     tree(random.uniform(10, 70))
-    t.lt(90)
+    t.left(90)
     t.pencolor(0, 0, 0)
 
 t.hideturtle()
