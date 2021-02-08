@@ -1,9 +1,8 @@
 import turtle
-import random
 from math import sqrt
 
 wn = turtle.Screen()
-wn.title("Fractal Tree")
+wn.title("Fractal Fern")
 wn.colormode(255)
 wn.setup(700, 700)
 wn.bgcolor(0, 0, 0)
@@ -12,30 +11,32 @@ t = turtle.Turtle()
 t.speed(0)
 
 
-def tree(length):
+def fern(length, angle):
     if length < 2:
-        t.pencolor(255, 100, 0)
+        t.pencolor(0, 255, 255)
     else:
-        t.pencolor(10, int(50 + 12 * sqrt(length)), int(255 - 5 * sqrt(length)))
+        t.pencolor(255, int(50 + 10 * sqrt(length)), 10)
     if length < 1:
         return
     else:
-        t.width(length/12)
+        t.width(length/15)
         t.pendown()
         t.forward(length)
-        t.left(30)
-        tree(length/random.uniform(1, 2.5))
-        t.right(60)
-        tree(length/random.uniform(1, 2.5))
-        t.left(30)
+        t.left(90)
+        fern(length/3, max(angle, 180-angle))
+        t.right(angle)
+        fern(length*4/5, angle)
+        t.right(180-angle)
+        fern(length/3, min(angle, 180-angle))
+        t.left(90)
         t.penup()
         t.backward(length)
 
 
 t.penup()
 t.goto(0, -250)
-t.lt(90)
-tree(150)
+t.lt(102)
+fern(120, 98)
 
 t.hideturtle()
 
