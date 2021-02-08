@@ -3,7 +3,7 @@ import random
 from math import sqrt
 
 wn = turtle.Screen()
-wn.title("Tree Bubbles")
+wn.title("Fractal Tree")
 wn.colormode(255)
 wn.setup(700, 700)
 wn.bgcolor(0, 0, 0)
