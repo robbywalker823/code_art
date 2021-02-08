@@ -34,7 +34,7 @@ def tree(length):
 
 t.penup()
 t.goto(0, -250)
-t.lt(90)
+t.left(90)
 tree(150)
 
 t.hideturtle()
