@@ -35,7 +35,7 @@ def fern(length, angle):
 
 t.penup()
 t.goto(0, -250)
-t.lt(102)
+t.left(102)
 fern(120, 98)
 
 t.hideturtle()
